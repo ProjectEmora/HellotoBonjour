@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Mobile responsiveness viewport setting -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HellotoBonjour — Master French</title>
-    <!-- Linking external style sheets is standard industry practice -->
+    <!-- Linking external style sheets -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +22,7 @@
 
     <main class="container">
         <!-- 1. Top Section: Daily News Dashboard Layout -->
-        <section class="widget daily-news">
+        <section class="widget daily-news" id="daily-news-widget">
             <div class="widget-tag tag-blue">📰 Actualités</div>
             <h2>Daily News in French</h2>
             <p>Accelerate your natural immersion. Every morning we break down current global happenings into intuitive, beginner-friendly French phrasing.</p>
@@ -31,14 +32,14 @@
                 <span class="news-context">Context: Culture & Tourism • Difficulty: Intermediate</span>
             </div>
             
-            <button class="btn btn-primary">Read Briefing</button>
+            <button class="btn btn-primary" id="news-btn">Read Briefing</button>
         </section>
 
         <!-- 2. Mid Section: Parallel Bento Grid Matrix -->
         <div class="learning-matrix">
             
-            <!-- Left Side: Practice Tool Box -->
-            <article class="widget">
+            <!-- Left Side: Practice Tool Box (Prepared for AI Agent Integration) -->
+            <article class="widget" id="practice-agent-container">
                 <div class="widget-tag tag-green">✍️ Évaluation</div>
                 <h2>Practice French Tool</h2>
                 <p>Sharpen sentence assembly metrics with real-time translation feedback loops.</p>
@@ -52,12 +53,12 @@
                     <input type="text" id="practice-input" placeholder="Type target French response...">
                     <button class="btn" id="practice-submit">Submit</button>
                 </div>
-                <!-- Dynamic feedback placeholder -->
+                <!-- Dynamic feedback placeholder for backend agent responses -->
                 <p id="feedback-message" class="feedback-text"></p>
             </article>
 
             <!-- Right Side: Learn Insights Box -->
-            <article class="widget">
+            <article class="widget" id="learn-insights-widget">
                 <div class="widget-tag tag-amber">💡 Leçons</div>
                 <h2>Learn French Tool</h2>
                 <p>Bite-sized grammar guides and core audio vocabulary logs compiled by native trainers.</p>
@@ -71,7 +72,7 @@
         </div>
 
         <!-- 3. Lower Mid Section: Weekly Creative -->
-        <section class="widget">
+        <section class="widget" id="cultural-creative-widget">
             <div class="widget-tag tag-purple">🎨 Culture</div>
             <h2>Weekly French Creative</h2>
             <p>A focused spotlight exploring historic art, breakthrough cinema, and defining musical tracks echoing across the modern Francophone sphere.</p>
@@ -82,7 +83,7 @@
         </section>
 
         <!-- 4. Lower Section: Francophone Spotlight -->
-        <section class="widget spotlight">
+        <section class="widget spotlight" id="francophone-spotlight-widget">
             <div class="widget-tag tag-red">📍 Exploration</div>
             <h2>Francophone Spotlight</h2>
             <p>Journey beyond France. Discover the distinct regional expressions, geographical wonders, and deep histories of French-speaking communities worldwide.</p>
