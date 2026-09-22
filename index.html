@@ -3,151 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salut! - Learn French</title>
-    <style>
-        /* Basic App Styling */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #0055A5; /* French Royal Blue */
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { margin: 0.5rem 0 0 0; font-size: 1.1rem; opacity: 0.9; }
-        
-        /* Layout Container */
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        /* Widget Card Styles */
-        .widget {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .widget h2 {
-            margin-top: 0;
-            color: #0055A5;
-            border-bottom: 2px solid #ef4135; /* French Red Accent */
-            padding-bottom: 0.5rem;
-        }
-
-        /* Side-by-Side Learning Grid */
-        .learning-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        @media (max-width: 768px) {
-            .learning-grid { grid-template-columns: 1fr; }
-        }
-
-        /* Footer Links Section */
-        footer {
-            background-color: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            margin-top: 4rem;
-        }
-        .footer-links, .social-links {
-            margin-bottom: 1.5rem;
-        }
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        footer a:hover { color: #ef4135; }
-        .social-links a { font-size: 0.9rem; opacity: 0.7; }
-        .social-links a:hover { opacity: 1; }
-    </style>
+    <title>HellotoBonjour — Master French</title>
+    <!-- Linking external style sheets is standard industry practice -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>Salut !</h1>
-        <p>Your daily gateway to mastering the French language</p>
+        <div class="header-container">
+            <div class="brand">
+                <h1>HellotoBonjour</h1>
+                <p>Apprendre le français</p>
+            </div>
+            <span class="flag-icon">🇫🇷</span>
+        </div>
     </header>
 
-    <div class="container">
-
-        <!-- 1. Top Section: Daily News -->
+    <main class="container">
+        <!-- 1. Top Section: Daily News Dashboard Layout -->
         <section class="widget daily-news">
-            <h2>📰 Daily News in French (Actualités du Jour)</h2>
-            <p><strong>Today's Headline:</strong> Le Louvre bat un nouveau record de visiteurs cet été !</p>
-            <p>Read through today's simplified news brief to practice your context clues and vocabulary expansion.</p>
-            <button style="background:#0055A5; color:white; border:none; padding:10px 15px; border-radius:4px; cursor:pointer;">Read Full Article</button>
+            <div class="widget-tag tag-blue">📰 Actualités</div>
+            <h2>Daily News in French</h2>
+            <p>Accelerate your natural immersion. Every morning we break down current global happenings into intuitive, beginner-friendly French phrasing.</p>
+            
+            <div class="news-card">
+                <p>« Le Louvre bat un nouveau record de visiteurs cet été ! »</p>
+                <span class="news-context">Context: Culture & Tourism • Difficulty: Intermediate</span>
+            </div>
+            
+            <button class="btn btn-primary">Read Briefing</button>
         </section>
 
-        <!-- 2. Mid Section: Side-by-Side Widgets -->
-        <div class="learning-grid">
-            <section class="widget practice-tool">
-                <h2>✍️ Practice French Tool</h2>
-                <p>Test your conjugation and grammar with our interactive fast-fire prompts.</p>
-                <p><em>Translate: "I would like a croissant, please."</em></p>
-                <input type="text" placeholder="Type your translation here..." style="width:90%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:4px;">
-                <br>
-                <button style="background:#4cae4c; color:white; border:none; padding:8px 12px; border-radius:4px; cursor:pointer;">Check Answer</button>
-            </section>
+        <!-- 2. Mid Section: Parallel Bento Grid Matrix -->
+        <div class="learning-matrix">
+            
+            <!-- Left Side: Practice Tool Box -->
+            <article class="widget">
+                <div class="widget-tag tag-green">✍️ Évaluation</div>
+                <h2>Practice French Tool</h2>
+                <p>Sharpen sentence assembly metrics with real-time translation feedback loops.</p>
+                
+                <div class="prompt-box">
+                    <span class="prompt-label">English Prompt:</span>
+                    <p class="prompt-text">"I would like a croissant, please."</p>
+                </div>
 
-            <section class="widget learn-tool">
-                <h2>💡 Learn French Tool</h2>
-                <p>Unlock bite-sized audio lessons, essential vocabulary lists, and pronunciation guides.</p>
-                <ul>
-                    <li><strong>Word of the Day:</strong> Éphémère (adj.) - Short-lived</li>
-                    <li><strong>Grammar Tip:</strong> Master the Futur Proche using *aller* + infinitive.</li>
+                <div class="input-group">
+                    <input type="text" id="practice-input" placeholder="Type target French response...">
+                    <button class="btn" id="practice-submit">Submit</button>
+                </div>
+                <!-- Dynamic feedback placeholder -->
+                <p id="feedback-message" class="feedback-text"></p>
+            </article>
+
+            <!-- Right Side: Learn Insights Box -->
+            <article class="widget">
+                <div class="widget-tag tag-amber">💡 Leçons</div>
+                <h2>Learn French Tool</h2>
+                <p>Bite-sized grammar guides and core audio vocabulary logs compiled by native trainers.</p>
+                
+                <ul class="feature-list">
+                    <li><strong>Mot du Jour:</strong> <em>Éphémère (adj.)</em> — Short-lived, fleeting.</li>
+                    <li><strong>Grammar Block:</strong> The <em>Futur Proche</em> blueprint (Aller + Infinitive).</li>
+                    <li><strong>Phonics Master:</strong> Demystifying nasal vowels (<em>an, en, in, on</em>).</li>
                 </ul>
-            </section>
+            </article>
         </div>
 
         <!-- 3. Lower Mid Section: Weekly Creative -->
-        <section class="widget weekly-creative">
-            <h2>🎨 Weekly French Creative</h2>
-            <p><strong>This Week's Focus:</strong> Cinema (Le Cinéma)</p>
-            <p>Explore the stunning cinematography and cultural impact of the classic film <em>Amélie (Le Fabuleux Destin d'Amélie Poulain)</em>. We break down key dialogues for learners.</p>
+        <section class="widget">
+            <div class="widget-tag tag-purple">🎨 Culture</div>
+            <h2>Weekly French Creative</h2>
+            <p>A focused spotlight exploring historic art, breakthrough cinema, and defining musical tracks echoing across the modern Francophone sphere.</p>
+            <div class="creative-spotlight">
+                <h3>Cinema Feature: <em>Le Fabuleux Destin d'Amélie Poulain</em></h3>
+                <p>We unpack idiomatic character dialogues and analyze structural colloquialisms used in Montmartre street slang.</p>
+            </div>
         </section>
 
         <!-- 4. Lower Section: Francophone Spotlight -->
         <section class="widget spotlight">
-            <h2>📍 Francophone Spotlight</h2>
-            <p><strong>Featured Destination:</strong> Quebec City, Canada 🇨🇦</p>
-            <p>Discover the cobblestone streets of Old Quebec, the historic Château Frontenac, and learn the distinct differences between European French and Québécois expressions!</p>
+            <div class="widget-tag tag-red">📍 Exploration</div>
+            <h2>Francophone Spotlight</h2>
+            <p>Journey beyond France. Discover the distinct regional expressions, geographical wonders, and deep histories of French-speaking communities worldwide.</p>
+            <p class="spotlight-focus">
+                ✨ This Week's Focus: <span class="underline-red">Quebec City, Canada 🇨🇦</span>
+            </p>
         </section>
+    </main>
 
-    </div>
-
-    <!-- 5. Bottom Section: Links & Socials -->
     <footer>
-        <div class="footer-links">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
+        <div class="footer-wrap">
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+            </div>
+            
+            <div class="social-elements">
+                <a href="#">Threads</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+            </div>
+            
+            <p class="footer-copy">&copy; 2026 HellotoBonjour Lab. Engine hosted via GitHub Pages.</p>
         </div>
-        <div class="social-links">
-            <a href="#">X (Twitter)</a> | 
-            <a href="#">Instagram</a> | 
-            <a href="#">YouTube</a>
-        </div>
-        <p style="font-size:0.8rem; opacity:0.5; margin-top:2rem;">&copy; 2026 Salut! French Learning App. All rights reserved.</p>
     </footer>
 
+    <!-- Linking external JavaScript logic at the bottom ensures optimal webpage loading speeds -->
+    <script src="script.js"></script>
 </body>
 </html>
